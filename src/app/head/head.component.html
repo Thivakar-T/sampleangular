@@ -1,0 +1,27 @@
+<div class="card-2">
+    <div class="card-body">
+        <table id="empRequestlist" class="table table-bordered" style="width:100%">
+            <thead>
+                <tr>
+                    <th>S. No</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let list of product ;let i = index">
+                    <td>{{i+1}}</td>
+                     <td>{{list.name}}</td>
+                    <td>{{list.age}}</td>
+                    <td>
+                         <button type="button" 
+                            class="btn btn-success btn-sm mr-2"><a routerLink='/login/{{list.id}}'>Accept </a> </button>
+                        <button type="button" (click)="reject(list.id)"
+                            class="btn btn-danger btn-sm">Reject</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
